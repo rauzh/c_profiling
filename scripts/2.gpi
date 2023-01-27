@@ -1,0 +1,23 @@
+#!/usr/bin/gnuplot -persist
+reset
+NO_ANIMATION = 1
+
+set xlabel "Число элементов, шт."
+set ylabel "Время, мкс"
+set grid
+
+set key left box
+set size 1,1
+
+#set terminal svg size 1920, 1080
+#set output '../pics/graph2.svg'
+#set size ratio 0.5625
+
+set xrange [1:10200]
+
+plot '../dataset/edited/2/ptrs_O2.txt' title 'pointers O2'   w errorbars   lt 4 lc 7 lw 1 pt 7 dt 0 
+replot '../dataset/edited/1/ptrs_O2.txt' title 'pointers O2' w lp          lt 4 lc 7 lw 1 pt 7 dt 0
+replot '../dataset/edited/2/mix_O2.txt' title 'mixed O2'     w errorbars   lt 7 lc 9 lw 1 pt 8 dt 4
+replot '../dataset/edited/1/mix_O2.txt' title 'mixed O2'     w lp          lt 7 lc 9 lw 1 pt 8 dt 4
+replot '../dataset/edited/2/idx_O2.txt' title 'idx O2'       w errorbars   lt 9 lc 18 lw 1 pt 11 dt 6
+replot '../dataset/edited/1/idx_O2.txt' title 'idx O2'       w lp          lt 9 lc 18 lw 1 pt 11 dt 6

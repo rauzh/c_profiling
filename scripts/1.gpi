@@ -1,0 +1,30 @@
+#!/usr/bin/gnuplot -persist
+reset
+NO_ANIMATION = 1
+
+set xlabel "Число элементов, шт."
+set ylabel "Время, мкс"
+set grid
+
+set key left box
+set size 1,1
+
+#set terminal svg size 1920, 1080
+#set output '../pics/graph1.svg'
+#set size ratio 0.5625
+
+plot '../dataset/edited/1/ptrs_O0.txt' title 'pointers O0'   w lp lt 1  lc 7 lw 1 dt 0
+replot '../dataset/edited/1/ptrs_O1.txt' title 'pointers O1' w lp lt 2  lc 7 lw 1 dt 0
+replot '../dataset/edited/1/ptrs_O2.txt' title 'pointers O2' w lp lt 3  lc 7 lw 1 dt 0
+replot '../dataset/edited/1/ptrs_O3.txt' title 'pointers O3' w lp lt 4  lc 7 lw 1 dt 0
+replot '../dataset/edited/1/ptrs_Os.txt' title 'pointers Os' w lp lt 5  lc 7 lw 1 dt 0
+replot '../dataset/edited/1/mix_O0.txt' title 'mixed O0'     w lp lt 6  lc 9 lw 1 dt 4
+replot '../dataset/edited/1/mix_O1.txt' title 'mixed O1'     w lp lt 7  lc 9 lw 1 dt 4
+replot '../dataset/edited/1/mix_O2.txt' title 'mixed O2'     w lp lt 8  lc 9 lw 1 dt 4
+replot '../dataset/edited/1/mix_O3.txt' title 'mixed O3'     w lp lt 9  lc 9 lw 1 dt 4 
+replot '../dataset/edited/1/mix_Os.txt' title 'mixed Os'     w lp lt 10 lc 9 lw 1 dt 4
+replot '../dataset/edited/1/idx_O0.txt' title 'idx O0'       w lp lt 11 lc 18 lw 1 dt 6
+replot '../dataset/edited/1/idx_O1.txt' title 'idx O1'       w lp lt 12 lc 18 lw 1 dt 6
+replot '../dataset/edited/1/idx_O2.txt' title 'idx O2'       w lp lt 13 lc 18 lw 1 dt 6
+replot '../dataset/edited/1/idx_O3.txt' title 'idx O3'       w lp lt 14 lc 18 lw 1 dt 6
+replot '../dataset/edited/1/idx_Os.txt' title 'idx Os'       w lp lt 15 lc 18 lw 1 dt 6
